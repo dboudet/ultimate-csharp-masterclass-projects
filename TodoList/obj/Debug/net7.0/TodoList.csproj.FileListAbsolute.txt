@@ -1,0 +1,14 @@
+C:\Users\dboudet\source\repos\TodoList\TodoList\bin\Debug\net7.0\TodoList.exe
+C:\Users\dboudet\source\repos\TodoList\TodoList\bin\Debug\net7.0\TodoList.deps.json
+C:\Users\dboudet\source\repos\TodoList\TodoList\bin\Debug\net7.0\TodoList.runtimeconfig.json
+C:\Users\dboudet\source\repos\TodoList\TodoList\bin\Debug\net7.0\TodoList.dll
+C:\Users\dboudet\source\repos\TodoList\TodoList\bin\Debug\net7.0\TodoList.pdb
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.AssemblyInfoInputs.cache
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.AssemblyInfo.cs
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.csproj.CoreCompileInputs.cache
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.dll
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\refint\TodoList.dll
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.pdb
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\TodoList.genruntimeconfig.cache
+C:\Users\dboudet\source\repos\TodoList\TodoList\obj\Debug\net7.0\ref\TodoList.dll
