@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/Calculator.csproj": {}
+    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj": {}
   },
   "projects": {
-    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/Calculator.csproj": {
+    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/Calculator.csproj",
-        "projectName": "Calculator",
-        "projectPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/Calculator.csproj",
+        "projectUniqueName": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj",
+        "projectName": "ToDoListAssignment",
+        "projectPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj",
         "packagesPath": "/Users/danboudet/.nuget/packages/",
-        "outputPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/obj/",
+        "outputPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/danboudet/.nuget/NuGet/NuGet.Config"

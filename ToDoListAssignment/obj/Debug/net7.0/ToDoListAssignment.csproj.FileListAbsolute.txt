@@ -1,0 +1,15 @@
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/bin/Debug/net7.0/ToDoListAssignment
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/bin/Debug/net7.0/ToDoListAssignment.deps.json
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/bin/Debug/net7.0/ToDoListAssignment.runtimeconfig.json
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/bin/Debug/net7.0/ToDoListAssignment.dll
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/bin/Debug/net7.0/ToDoListAssignment.pdb
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.csproj.AssemblyReference.cache
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.AssemblyInfoInputs.cache
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.AssemblyInfo.cs
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.csproj.CoreCompileInputs.cache
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.dll
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/refint/ToDoListAssignment.dll
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.pdb
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.genruntimeconfig.cache
+/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ref/ToDoListAssignment.dll

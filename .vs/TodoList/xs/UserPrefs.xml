@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{14C836DC-CE22-40FD-B210-BB947D1D7745}|Default">
+  <MonoDevelop.Ide.ItemProperties.TodoList PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ToDoListAssignment/Program.cs">
+    <Files>
+      <File FileName="ToDoListAssignment/Program.cs" Line="108" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TodoList" expanded="True">
+            <Node name="ToDoListAssignment" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.ToDoListAssignment PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
