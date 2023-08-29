@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListAssignment", "ToDoListAssignment\ToDoListAssignment.csproj", "{14C836DC-CE22-40FD-B210-BB947D1D7745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRollGame", "DiceRollGame\DiceRollGame.csproj", "{893A4A18-F0C4-4CE4-B099-DC3AC4344972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiceRollGame", "DiceRollGame\DiceRollGame.csproj", "{893A4A18-F0C4-4CE4-B099-DC3AC4344972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRollGameV2", "DiceRollGameV2\DiceRollGameV2.csproj", "{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
