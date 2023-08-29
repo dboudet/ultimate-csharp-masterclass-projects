@@ -3,7 +3,7 @@
 int numberOfGuesses = 0;
 bool correctGuess = false;
 
-int randomNumber = new RandomNumber().RollDice();
+int randomNumber = RandomNumber.RollDice();
 var validateUserInput = new ValidateUserInput();
 Console.WriteLine("Dice rolled. Guess what number it shows in 3 tries.");
 
