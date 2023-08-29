@@ -13,3 +13,17 @@
 /Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.pdb
 /Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ToDoListAssignment.genruntimeconfig.cache
 /Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/Debug/net7.0/ref/ToDoListAssignment.dll
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\bin\Debug\net7.0\ToDoListAssignment.exe
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\bin\Debug\net7.0\ToDoListAssignment.deps.json
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\bin\Debug\net7.0\ToDoListAssignment.runtimeconfig.json
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\bin\Debug\net7.0\ToDoListAssignment.dll
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\bin\Debug\net7.0\ToDoListAssignment.pdb
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.AssemblyInfoInputs.cache
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.AssemblyInfo.cs
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.csproj.CoreCompileInputs.cache
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.dll
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\refint\ToDoListAssignment.dll
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.pdb
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ToDoListAssignment.genruntimeconfig.cache
+C:\Users\dboudet\source\repos\TodoList\ToDoListAssignment\obj\Debug\net7.0\ref\ToDoListAssignment.dll

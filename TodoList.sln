@@ -5,9 +5,11 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoList", "TodoList\TodoList.csproj", "{592F18E3-20CE-4F61-B79E-1CEAF2AB8886}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{E581E2E2-47F8-48EF-869D-D1313142240A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{E581E2E2-47F8-48EF-869D-D1313142240A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListAssignment", "ToDoListAssignment\ToDoListAssignment.csproj", "{14C836DC-CE22-40FD-B210-BB947D1D7745}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListAssignment", "ToDoListAssignment\ToDoListAssignment.csproj", "{14C836DC-CE22-40FD-B210-BB947D1D7745}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRollGame", "DiceRollGame\DiceRollGame.csproj", "{893A4A18-F0C4-4CE4-B099-DC3AC4344972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{14C836DC-CE22-40FD-B210-BB947D1D7745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C836DC-CE22-40FD-B210-BB947D1D7745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C836DC-CE22-40FD-B210-BB947D1D7745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893A4A18-F0C4-4CE4-B099-DC3AC4344972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\bin\Debug\net7.0\DiceRollGame.exe
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\bin\Debug\net7.0\DiceRollGame.deps.json
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\bin\Debug\net7.0\DiceRollGame.runtimeconfig.json
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\bin\Debug\net7.0\DiceRollGame.dll
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\bin\Debug\net7.0\DiceRollGame.pdb
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.AssemblyInfoInputs.cache
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.AssemblyInfo.cs
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.csproj.CoreCompileInputs.cache
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.dll
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\refint\DiceRollGame.dll
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.pdb
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\DiceRollGame.genruntimeconfig.cache
+C:\Users\dboudet\source\repos\TodoList\DiceRollGame\obj\Debug\net7.0\ref\DiceRollGame.dll

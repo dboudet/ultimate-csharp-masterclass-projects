@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "el5ETQ3cgmhILPHIoWTRqZeMVRHippdDxDccI+vZxRJfKQUE/KlEmOi/hcAArBQ5sO8dO3I3ldfG4XB+rFjmVg==",
+  "dgSpecHash": "D+pAneobX0mHuxR+0bgFGU+GineQbhfdfkrkWCV3FvKQpjFpn3e3VS/ImhPJzEbSSpUnQkz1l5DzKTImsaY6+g==",
   "success": true,
-  "projectFilePath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj",
+  "projectFilePath": "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\ToDoListAssignment.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

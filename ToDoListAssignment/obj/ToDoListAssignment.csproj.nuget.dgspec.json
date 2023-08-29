@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj": {}
+    "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\ToDoListAssignment.csproj": {}
   },
   "projects": {
-    "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj": {
+    "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\ToDoListAssignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj",
+        "projectUniqueName": "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\ToDoListAssignment.csproj",
         "projectName": "ToDoListAssignment",
-        "projectPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/ToDoListAssignment.csproj",
-        "packagesPath": "/Users/danboudet/.nuget/packages/",
-        "outputPath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/ToDoListAssignment/obj/",
+        "projectPath": "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\ToDoListAssignment.csproj",
+        "packagesPath": "C:\\Users\\dboudet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dboudet\\source\\repos\\TodoList\\ToDoListAssignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/danboudet/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\dboudet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LaxHqbpp8DI/frenZW49PGh1YT3RjB0Dcl7hH6kSsZflcMts65AWqT0ZV5jQdPA+GgWsDPL5ka0efTxN3OAJsQ==",
+  "dgSpecHash": "mLFuFM7P4BXw8ythr1rm9GAa7ewSSWxqz1gRTZtDMMg+uipMnmYKGaePQRrsVLgn9413D4ST9rZI0/gQPsVZHQ==",
   "success": true,
-  "projectFilePath": "/Users/danboudet/code/ultimate-csharp-masterclass-projects/Calculator/Calculator.csproj",
+  "projectFilePath": "C:\\Users\\dboudet\\source\\repos\\TodoList\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
