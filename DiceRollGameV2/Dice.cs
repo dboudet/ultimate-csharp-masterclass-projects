@@ -1,7 +1,7 @@
 ﻿public class Dice
 {
     readonly int _numberOfSides;
-    public Dice(int numberOfSides = 6)
+    public Dice(int numberOfSides)
     {
         _numberOfSides = numberOfSides;
     }

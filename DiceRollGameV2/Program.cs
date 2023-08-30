@@ -1,13 +1,15 @@
 ﻿
-bool isCorrectGuess = false;
-int remainingGuesses = 3;
+var game = new GameMechanics
+{
+    MaxGuesses = 3,
+    DiceSides = 6
+};
 
-// can change dice sides; defaults to 6 in Constructor
-var diceRoll = new Dice().Roll();
+var diceRoll = new Dice(game.DiceSides).Roll();
 DisplayMessage.Intro();
 
 
-while (remainingGuesses > 0 && !isCorrectGuess)
+while (game.IsNotOver())
 {
     var userInput = new UserInput(Console.ReadLine());
 
@@ -18,18 +20,18 @@ while (remainingGuesses > 0 && !isCorrectGuess)
     else if (userInput.InputAsInt == diceRoll)
     {
         DisplayMessage.Winner();
-        isCorrectGuess = true;
+        game.IsCorrectGuess = true;
         break;
     }
     else
     {
         DisplayMessage.WrongValidGuess();
-        remainingGuesses--;
+        game.RemainingGuesses--;
     }
     
-    if (remainingGuesses > 0) DisplayMessage.EnterNumber();
+    if (game.RemainingGuesses > 0) DisplayMessage.EnterNumber();
 }
 
-if (!isCorrectGuess) DisplayMessage.Loser();
+if (!game.IsCorrectGuess) DisplayMessage.Loser();
 
 Console.ReadKey();
