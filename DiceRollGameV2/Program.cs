@@ -1,37 +1,19 @@
-﻿
-var game = new GameMechanics
+﻿using DiceRollGameV2.Game;
+using DiceRollGameV2.UserCommunication;
+
+var random = new Random();
+// optional second parameter to set number of dice sides (defaults to 6)
+// var dice = new Dice(random, 20).Roll();
+var dice = new Dice(random);
+
+var game = new GuessingGame
 {
     MaxGuesses = 3,
-    DiceSides = 6
+    _dice = dice
 };
 
-var diceRoll = new Dice(game.DiceSides).Roll();
-DisplayMessage.Intro();
 
-
-while (game.IsNotOver())
-{
-    var userInput = new UserInput(Console.ReadLine());
-
-    if (!userInput.IsInteger)
-    {
-        DisplayMessage.Invalid();
-    }
-    else if (userInput.InputAsInt == diceRoll)
-    {
-        DisplayMessage.Winner();
-        game.IsCorrectGuess = true;
-        break;
-    }
-    else
-    {
-        DisplayMessage.WrongValidGuess();
-        game.RemainingGuesses--;
-    }
-    
-    if (game.RemainingGuesses > 0) DisplayMessage.EnterNumber();
-}
-
-if (!game.IsCorrectGuess) DisplayMessage.Loser();
+Result gameResult = game.Play();
+DisplayMessage.GameResult(gameResult.ToString());
 
 Console.ReadKey();
