@@ -1,8 +1,6 @@
-﻿using CookieCookbook.Recipes;
+﻿using CookieCookbook.AppSettings;
 
 public interface IRecipe
 {
-    void StoreRecipe(string filePath);
-
-    //void PrintSingleRecipe(List<string> recipe);
+    void StoreRecipe(UserSettings userSettings);
 }

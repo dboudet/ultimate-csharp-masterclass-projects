@@ -1,4 +1,5 @@
-﻿using CookieCookbook.Ingredients;
+﻿using CookieCookbook.AppSettings;
+using CookieCookbook.Ingredients;
 using CookieCookbook.Recipes;
 using CookieCookbook.UserMessages;
 
@@ -6,11 +7,11 @@ namespace CookieCookbook.UserInputHandler
 {
     public static class HandleUserInput
     {
-        public static void CreateRecipe(Recipe recipe, string filePath)
+        public static void CreateRecipe(UserSettings userSettings, Recipe recipe, Ingredient[] ingredients)
         {
             bool DoneSelectingIngredients = false;
 
-            Ingredient.All.ForEach(v => v.PrintIngredient());
+            Array.ForEach(ingredients, v => v.PrintIngredient());
 
 
             do
@@ -29,14 +30,14 @@ namespace CookieCookbook.UserInputHandler
                     {
                         Console.WriteLine("Recipe added:");
                         DisplayMessage.PrintSingleRecipe(recipe);
-                        recipe.StoreRecipe(filePath);
+                        recipe.StoreRecipe(userSettings);
                     }
                     DoneSelectingIngredients = true;
                     break;
                 }
                 else if (
                     _selectedIngredientAsInt <= 0 ||
-                    _selectedIngredientAsInt > Ingredient.All.Count)
+                    _selectedIngredientAsInt > ingredients.Length)
                 {
                     continue;
                 }

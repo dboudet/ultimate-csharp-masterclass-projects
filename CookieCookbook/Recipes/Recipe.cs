@@ -1,56 +1,48 @@
 ﻿using System.Text.Json;
+using CookieCookbook.AppSettings;
 using CookieCookbook.DataAccess;
-using CookieCookbook.Ingredients;
 
 namespace CookieCookbook.Recipes
 {
     public abstract class Recipe : List<string>, IRecipe
     {
-        public abstract void StoreRecipe(string filePath);
-        //public abstract void PrintSavedRecipes(string filePath);
+        public abstract void StoreRecipe(UserSettings userSettings);
+        protected List<string> GetSavedRecipes(UserSettings userSettings)
+        {
+            return File.Exists(userSettings.FilePath) ?
+                FileHandler.ReadFromFile(userSettings) :
+                new List<string>();
+        }
     }
 
     public class RecipeAsJson : Recipe
     {
-        public override void StoreRecipe(string filePath)
+        public override void StoreRecipe(UserSettings userSettings)
         {
-            string _textString = string.Join(FileHandler.Separator, this);
-            FileHandler.WriteToFile(filePath, _textString);
+            var savedRecipes = new List<string>();
+            if (File.Exists(userSettings.FilePath))
+            {
+                savedRecipes = FileHandler.ReadFromFile(userSettings);
+            }
+
+            var newRecipeAsString = string.Join(',', this);
+            savedRecipes.Add(newRecipeAsString);
+            string _jsonString = JsonSerializer.Serialize(savedRecipes);
+            
+            FileHandler.WriteToFile(userSettings.FilePath, _jsonString);
         }
-        //public override void PrintSavedRecipes(string filePath)
-        //{
-        //    var savedRecipes = FileHandler.ReadFromFile(filePath);
-        //    Console.WriteLine("Saved Recipes Found:");
-        //    for (int i = 0; i < savedRecipes.Count; i++)
-        //    {
-        //        var recipeAsList = savedRecipes[i].Split(',').ToList();
-        //        Console.WriteLine($"*****{i + 1}*****");
-        //        PrintSingleRecipe(recipeAsList);
-        //    }
-        //}
     }
     public class RecipeAsTxt : Recipe
     {
-        public override void StoreRecipe(string filePath)
+        public override void StoreRecipe(UserSettings userSettings)
         {
             var savedRecipes =
-                File.Exists(filePath) ? 
-                FileHandler.ReadFromFile(filePath) : 
+                File.Exists(userSettings.FilePath) ? 
+                FileHandler.ReadFromFile(userSettings) : 
                 new List<string>();
             savedRecipes.Add(string.Join(',', this));
-            FileHandler.WriteToFile(filePath, string.Join(FileHandler.Separator, savedRecipes));
+            FileHandler.WriteToFile(userSettings.FilePath, string.Join(FileHandler.Separator, savedRecipes));
         }
-        //public override void PrintSavedRecipes(string filePath)
-        //{
-        //    var savedRecipes = FileHandler.ReadFromFile(filePath);
-        //    Console.WriteLine("Saved Recipes Found:");
-        //    for (int i = 0; i < savedRecipes.Count; i++)
-        //    {
-        //        var recipeAsList = savedRecipes[i].Split(',').ToList();
-        //        Console.WriteLine($"*****{i + 1}*****");
-        //        PrintSingleRecipe(recipeAsList);
-        //    }
-        //}
     }
 
 }

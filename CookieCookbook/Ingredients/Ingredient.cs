@@ -14,7 +14,8 @@
         }
         public static Ingredient GetIngredientById(string id)
         {
-            return All.Find(x => x.Id == id);
+            return All.Find(x => x.Id == id)
+                ?? throw new ArgumentException("No ingredient found for that ID.");
         }
 
         public void PrintIngredient() =>

@@ -1,4 +1,5 @@
 ﻿using CookieCookbook.AppSettings;
+using CookieCookbook.DataAccess;
 using CookieCookbook.Ingredients;
 using CookieCookbook.Recipes;
 using CookieCookbook.UserInputHandler;
@@ -6,7 +7,7 @@ using CookieCookbook.UserMessages;
 
 
 // set file format to either txt or json
-var _userSettings = new UserSettings(FileFormat.txt);
+var userSettings = new UserSettings(FileFormat.txt);
 
 Ingredient[] Ingredients =
 {
@@ -19,18 +20,19 @@ Ingredient[] Ingredients =
 };
 
 Recipe recipe =
-    _userSettings.SelectedFormat == FileFormat.json ? 
+    userSettings.SelectedFormat == FileFormat.json ? 
     new RecipeAsJson() : 
     new RecipeAsTxt();
 
-if (File.Exists(_userSettings.FilePath))
+if (File.Exists(userSettings.FilePath))
 {
-    DisplayMessage.PrintSavedRecipes(_userSettings.FilePath);
+    var _savedRecipes = FileHandler.ReadFromFile(userSettings);
+    DisplayMessage.PrintSavedRecipes(_savedRecipes);
 }
 
 DisplayMessage.Intro();
 
-HandleUserInput.CreateRecipe(recipe, _userSettings.FilePath);
+HandleUserInput.CreateRecipe(userSettings, recipe, Ingredients);
 
 
 DisplayMessage.PromptForExit();
