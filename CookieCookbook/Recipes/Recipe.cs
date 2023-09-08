@@ -4,45 +4,53 @@ using CookieCookbook.Ingredients;
 
 namespace CookieCookbook.Recipes
 {
-    public abstract class Recipe : List<Ingredient>, IRecipe
+    public abstract class Recipe : List<string>, IRecipe
     {
-        public abstract void StoreRecipe();
-        public void PrintSingleRecipe()
-        {
-            foreach (var item in this)
-            {
-                Console.WriteLine($"{item.Name}: {item.Instructions}");
-            }
-        }
-        public void PrintSavedRecipes(string filePath)
-        {
-            var savedRecipes = FileHandler.ReadFromFile(filePath);
-            Console.WriteLine("Saved Recipes Found:");
-            foreach (var item in savedRecipes)
-            {
-                PrintSingleRecipe();
-            }
-        }
+        public abstract void StoreRecipe(string filePath);
+        //public abstract void PrintSavedRecipes(string filePath);
     }
 
     public class RecipeAsJson : Recipe
     {
-        //string? _asJson;
-        public override void StoreRecipe()
+        public override void StoreRecipe(string filePath)
         {
-            //_asText = JsonSerializer.Serialize(this);
-            //Console.WriteLine(_asJson);
-            Console.WriteLine("store recipe in file");
+            string _textString = string.Join(FileHandler.Separator, this);
+            FileHandler.WriteToFile(filePath, _textString);
         }
+        //public override void PrintSavedRecipes(string filePath)
+        //{
+        //    var savedRecipes = FileHandler.ReadFromFile(filePath);
+        //    Console.WriteLine("Saved Recipes Found:");
+        //    for (int i = 0; i < savedRecipes.Count; i++)
+        //    {
+        //        var recipeAsList = savedRecipes[i].Split(',').ToList();
+        //        Console.WriteLine($"*****{i + 1}*****");
+        //        PrintSingleRecipe(recipeAsList);
+        //    }
+        //}
     }
     public class RecipeAsTxt : Recipe
     {
-        public override void StoreRecipe()
+        public override void StoreRecipe(string filePath)
         {
-            //_asText = JsonSerializer.Serialize(this);
-            //Console.WriteLine(_asJson);
-            Console.WriteLine("store recipe in file");
+            var savedRecipes =
+                File.Exists(filePath) ? 
+                FileHandler.ReadFromFile(filePath) : 
+                new List<string>();
+            savedRecipes.Add(string.Join(',', this));
+            FileHandler.WriteToFile(filePath, string.Join(FileHandler.Separator, savedRecipes));
         }
+        //public override void PrintSavedRecipes(string filePath)
+        //{
+        //    var savedRecipes = FileHandler.ReadFromFile(filePath);
+        //    Console.WriteLine("Saved Recipes Found:");
+        //    for (int i = 0; i < savedRecipes.Count; i++)
+        //    {
+        //        var recipeAsList = savedRecipes[i].Split(',').ToList();
+        //        Console.WriteLine($"*****{i + 1}*****");
+        //        PrintSingleRecipe(recipeAsList);
+        //    }
+        //}
     }
 
 }
