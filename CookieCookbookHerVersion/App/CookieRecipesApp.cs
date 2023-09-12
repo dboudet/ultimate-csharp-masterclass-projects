@@ -9,11 +9,13 @@ public class CookieRecipesApp
 
     public CookieRecipesApp(
         IRecipesRepository recipesRepository,
-        IRecipesUserInteraction recipesUserInteraction)
+        IRecipesUserInteraction recipesUserInteraction
+    )
     {
         _recipesRepository = recipesRepository;
         _recipesUserInteraction = recipesUserInteraction;
     }
+
     public void Run(string filePath)
     {
         var allRecipes = _recipesRepository.Read(filePath);
@@ -31,13 +33,12 @@ public class CookieRecipesApp
 
             _recipesUserInteraction.ShowMessage("Recipe Added:");
             _recipesUserInteraction.ShowMessage(recipe.ToString());
-
         }
         else
         {
             _recipesUserInteraction.ShowMessage(
-                "No ingredients have been selected." +
-                "Recipe will not be saved.");
+                "No ingredients have been selected." + "Recipe will not be saved."
+            );
         }
 
         _recipesUserInteraction.Exit();

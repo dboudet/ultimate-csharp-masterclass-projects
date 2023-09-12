@@ -7,8 +7,7 @@ public class RecipesConsoleUserInteraction : IRecipesUserInteraction
 {
     private readonly IIngredientsRegister _ingredientsRegister;
 
-    public RecipesConsoleUserInteraction(
-        IIngredientsRegister ingredientsRegister)
+    public RecipesConsoleUserInteraction(IIngredientsRegister ingredientsRegister)
     {
         _ingredientsRegister = ingredientsRegister;
     }
@@ -59,8 +58,9 @@ public class RecipesConsoleUserInteraction : IRecipesUserInteraction
 
         while (!doneSelectingIngredients)
         {
-            Console.WriteLine("Add an ingredient by its ID, " +
-                "or type anything else if finished.");
+            Console.WriteLine(
+                "Add an ingredient by its ID, " + "or type anything else if finished."
+            );
 
             var userInput = Console.ReadLine();
             if (int.TryParse(userInput, out int id))

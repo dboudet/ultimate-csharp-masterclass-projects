@@ -8,9 +8,11 @@ public class RecipesRepository : IRecipesRepository
     private readonly IStringsRepository _stringsRepository;
     private readonly IIngredientsRegister _ingredientsRegister;
     private const string Separator = ",";
+
     public RecipesRepository(
         IStringsRepository stringsRepository,
-        IIngredientsRegister ingredientsRegister)
+        IIngredientsRegister ingredientsRegister
+    )
     {
         _stringsRepository = stringsRepository;
         _ingredientsRegister = ingredientsRegister;
