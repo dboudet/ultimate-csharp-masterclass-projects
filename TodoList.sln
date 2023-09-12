@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiceRollGame", "DiceRollGam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiceRollGameV2", "DiceRollGameV2\DiceRollGameV2.csproj", "{86A417EB-EF3F-46D8-8B9E-CBA61BEC7C3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieCookbook", "CookieCookbook\CookieCookbook.csproj", "{D7E7A903-B312-4B2B-850F-27C47D388F56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookieCookbook", "CookieCookbook\CookieCookbook.csproj", "{D7E7A903-B312-4B2B-850F-27C47D388F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieCookbookHerVersion", "CookieCookbookHerVersion\CookieCookbookHerVersion.csproj", "{2DD39B82-E305-4975-BD79-46E71930C727}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D7E7A903-B312-4B2B-850F-27C47D388F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E7A903-B312-4B2B-850F-27C47D388F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E7A903-B312-4B2B-850F-27C47D388F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD39B82-E305-4975-BD79-46E71930C727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD39B82-E305-4975-BD79-46E71930C727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD39B82-E305-4975-BD79-46E71930C727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD39B82-E305-4975-BD79-46E71930C727}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
