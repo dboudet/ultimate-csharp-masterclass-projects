@@ -1,7 +1,16 @@
-﻿
+﻿using GameDataParser.UserInteractions;
+
+
+
+
+const string fileName = "GameData";
+const string extension = "json";
+var userInteraction = new UserConsoleInteraction();
 
 
 public bool IsInputValid = false;
+
+
 
 while (!IsInputValid)
 {
@@ -21,16 +30,38 @@ while (!IsInputValid)
 
 public interface IFileReader
 {
-    string ReadFile(string path);
+    public string FilePath { get; init; }
+    bool IsValidFilePath(string fileName, string extension);
+    bool DoesFileExist();
+    string ReadFile();
+    // THIS SHOULD END UP BEING A GAMES OBJECT
+    // BUT DO WE KEEP THIS RETURNING A STRING?
     void HandleInvalidJson(string fileContents);
 
 }
 
 public class JsonFileReader : IFileReader
 {
-    public string ReadFile(string path)
+    public string FilePath { get; init; }
+    public JsonFileReader(string fileName, string extension)
     {
-        string fileContents = File.ReadAllText(path);
+        FilePath = $"{fileName}.{extension}";
+    }
+    public bool IsValidFilePath(string fileName, string extension)
+    {
+        return
+            extension == "json" &&
+            !string.IsNullOrEmpty(fileName) &&
+            fileName.IndexOfAny(Path.GetInvalidFileNameChars()) < 0;
+    }
+
+    public bool DoesFileExist()
+    {
+        return File.Exists(FilePath);
+    }
+    public string ReadFile()
+    {
+        string fileContents = File.ReadAllText(FilePath);
         return fileContents;
     }
 
@@ -38,17 +69,9 @@ public class JsonFileReader : IFileReader
     {
         throw new NotImplementedException();
     }
-}
-
-
-
-Console.WriteLine("Press any key to close.");
-Console.ReadKey();
-
-public interface IUserMessages
-{
-    void ShowMessage(string message);
-    void EndProgram();
-    void PromptForInput();
 
 }
+
+
+
+

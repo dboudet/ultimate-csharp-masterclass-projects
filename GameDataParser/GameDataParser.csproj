@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="App\" />
+    <Folder Include="FileHandler\" />
+    <Folder Include="Games\" />
+  </ItemGroup>
+
 </Project>
