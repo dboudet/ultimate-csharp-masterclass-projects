@@ -1,24 +1,28 @@
-﻿using GameDataParser.App;
+﻿using System.Text.Json;
+using GameDataParser.App;
 using GameDataParser.ExceptionLogger;
 using GameDataParser.FileHandler;
-using GameDataParser.InputHandler;
 using GameDataParser.UserInteractions;
 
 
-const string fileName = "games";
-//const string fileName = "gamesInvalidFormat";
-const string extension = "json";
 const string logFilePath = "log.txt";
 
 IUserInteraction userInteraction = new UserConsoleInteraction();
-IFileReader jsonFileReader = new JsonFileReader(fileName, extension);
-IUserInputHandler inputHander = new UserInputHandler();
+IFileReader fileReader = new JsonFileReader();
 ILogger logger = new TextFileLogger(logFilePath);
 
 var app = new GameDataParserApp(
-    jsonFileReader,
-    inputHander,
+    fileReader,
     userInteraction,
     logger);
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    logger.Log(ex);
+    userInteraction.ShowMessage("An error occurred. Please check the log file for more details.");
+    userInteraction.EndProgram();
+}

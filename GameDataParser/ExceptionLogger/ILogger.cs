@@ -6,7 +6,7 @@
         string? ExistingLogContents { get; set; }
         string LogFilePath { get; init; }
 
-        string ReadExistingLogEntries();
-        void AddExceptionToLog(string exceptionMessage);
+        string GetExistingLogEntries();
+        void Log(Exception exception);
     }
 }

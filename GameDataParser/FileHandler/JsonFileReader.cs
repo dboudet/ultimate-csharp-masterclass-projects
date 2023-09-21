@@ -1,38 +1,37 @@
-﻿namespace GameDataParser.FileHandler
+﻿using System.Text.Json;
+using GameDataParser.ExceptionLogger;
+using GameDataParser.Games;
+using GameDataParser.UserInteractions;
+
+namespace GameDataParser.FileHandler
 {
     public class JsonFileReader : IFileReader
     {
-        public string FilePath { get; init; }
-        public JsonFileReader(string fileName, string extension)
+        public List<Game> ReadFile(
+            string filePath,
+            IUserInteraction userInteraction,
+            ILogger logger)
         {
-            FilePath = $"{fileName}.{extension}";
-        }
-        public bool IsValidFilePath(string fileName, string extension)
-        {
-            return
-                extension == "json" &&
-                !string.IsNullOrEmpty(fileName) &&
-                fileName.IndexOfAny(Path.GetInvalidFileNameChars()) < 0;
-        }
+            var fileContents = File.ReadAllText(filePath);
 
-        public bool DoesGamesFileExist()
-        {
-            return File.Exists(FilePath);
-        }
-        public string ReadFile()
-        {
-            string fileContents = File.ReadAllText(FilePath);
-            return fileContents;
-        }
+            try
+            {
+                return JsonSerializer.Deserialize<List<Game>>(fileContents);
+            }
+            catch (Exception ex)
+            {
+                // TODO: catch more specific exception?
+                logger.Log(ex);
 
-        public void HandleInvalidJson(string fileContents)
-        {
-            throw new NotImplementedException();
-        }
+                userInteraction.ShowErrorMessage(
+                    $"JSON in {filePath} was not in a valid format." +
+                    $"JSON body: {fileContents}");
 
-        public Games ParseFileContents(string fileContents)
-        {
-            throw new NotImplementedException();
+                userInteraction.ShowMessage(
+                    "Sorry! The application has experienced an unexpected error and will have to be closed.");
+
+                throw;
+            }
         }
     }
 }
