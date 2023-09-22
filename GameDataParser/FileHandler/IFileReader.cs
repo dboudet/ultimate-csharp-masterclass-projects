@@ -8,7 +8,6 @@ namespace GameDataParser.FileHandler
     {
         public List<Game> ReadFile(
             string filePath,
-            IUserInteraction userInteraction,
-            ILogger logger);
+            IUserInteraction userInteraction);
     }
 }

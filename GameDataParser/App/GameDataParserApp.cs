@@ -10,16 +10,13 @@ namespace GameDataParser.App
     {
         private readonly IFileReader _fileReader;
         private readonly IUserInteraction _userInteraction;
-        private readonly ILogger _logger;
 
         public GameDataParserApp(
             IFileReader fileReader,
-            IUserInteraction userInteraction,
-            ILogger logger)
+            IUserInteraction userInteraction)
         {
             _fileReader = fileReader;
             _userInteraction = userInteraction;
-            _logger = logger;
         }
 
         public void Run()
@@ -28,7 +25,7 @@ namespace GameDataParser.App
 
             var games = new GamesRegister();
 
-            var gamesFromFile = _fileReader.ReadFile(filePath, _userInteraction, _logger);
+            var gamesFromFile = _fileReader.ReadFile(filePath, _userInteraction);
 
             games.Add(gamesFromFile);
 
