@@ -10,10 +10,4 @@
             $"{Title}, released in {ReleaseYear}, rating: {Rating}";
     }
 
-    public class GamesRegister
-    {
-        public List<Game> All { get; } = new List<Game>();
-
-    }
-
 }

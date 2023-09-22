@@ -55,6 +55,8 @@ namespace GameDataParser.UserInteractions
         }
         public void PrintGames(GamesRegister games)
         {
+            ShowMessage("Loaded games are:");
+
             foreach (var game in games.All)
             {
                 ShowMessage(game.ToString());

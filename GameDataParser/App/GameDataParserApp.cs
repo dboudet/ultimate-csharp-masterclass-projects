@@ -1,9 +1,7 @@
-﻿using System.Text.Json;
-using GameDataParser.ExceptionLogger;
+﻿using GameDataParser.ExceptionLogger;
 using GameDataParser.FileHandler;
 using GameDataParser.Games;
 using GameDataParser.UserInteractions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GameDataParser.App
 {
@@ -32,14 +30,12 @@ namespace GameDataParser.App
 
             var gamesFromFile = _fileReader.ReadFile(filePath, _userInteraction, _logger);
 
-            foreach (var game in gamesFromFile)
-            {
-                games.All.Add(game);
-            }
+            games.Add(gamesFromFile);
 
-            _userInteraction.PrintGames(games);
-
-            _userInteraction.EndProgram();
+            if (games.All.Any())
+                _userInteraction.PrintGames(games);
+            else
+                _userInteraction.ShowMessage("No games are present in the input file.");
         }
     }
 

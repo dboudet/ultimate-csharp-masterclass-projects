@@ -2,7 +2,7 @@
 {
     public class TextFileLogger : ILogger
     {
-        readonly string Separator = Environment.NewLine;
+        private readonly string Separator = Environment.NewLine;
         public bool LogFileExists { get; }
         public string? ExistingLogContents { get; set; }
         public string LogFilePath { get; init; }
@@ -19,9 +19,9 @@
         {
             string logContents = GetExistingLogEntries();
             string newException =
-                $"[{new DateTime().ToString()}], " +
-                $"Exception message: {exception.Message}, " +
-                $"Stack trace: {exception.StackTrace}";
+                $"[{DateTime.Now}] {Separator}" +
+                $"Exception message: {exception.Message} {Separator}" +
+                $"Stack trace: {exception.StackTrace} {Separator}";
             File.WriteAllText(LogFilePath, logContents + Separator + newException);
         }
 

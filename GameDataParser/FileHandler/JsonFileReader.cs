@@ -20,9 +20,6 @@ namespace GameDataParser.FileHandler
             }
             catch (Exception ex)
             {
-                // TODO: catch more specific exception?
-                logger.Log(ex);
-
                 userInteraction.ShowErrorMessage(
                     $"JSON in {filePath} was not in a valid format." +
                     $"JSON body: {fileContents}");
@@ -30,7 +27,7 @@ namespace GameDataParser.FileHandler
                 userInteraction.ShowMessage(
                     "Sorry! The application has experienced an unexpected error and will have to be closed.");
 
-                throw;
+                throw new Exception($"{ex.Message} The file name is: {filePath}", ex);
             }
         }
     }
