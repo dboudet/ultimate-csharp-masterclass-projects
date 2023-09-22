@@ -1,4 +1,4 @@
-﻿namespace GameDataParserHers.VideoGames
+﻿namespace GameDataParserHers.Models
 {
     public class VideoGame
     {

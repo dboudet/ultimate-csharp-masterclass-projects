@@ -1,4 +1,4 @@
-﻿namespace GameDataParserHers.UserInteractions
+﻿namespace GameDataParserHers.UserInteraction
 {
     public interface IUserInteractor
     {

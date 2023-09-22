@@ -1,6 +1,6 @@
-﻿using GameDataParserHers.VideoGames;
+﻿using GameDataParserHers.Models;
 
-namespace GameDataParserHers.Printer
+namespace GameDataParserHers.UserInteraction
 {
 
     public interface IGamesPrinter

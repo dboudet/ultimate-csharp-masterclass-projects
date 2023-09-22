@@ -1,6 +1,6 @@
-﻿using GameDataParserHers.VideoGames;
+﻿using GameDataParserHers.Models;
 
-namespace GameDataParserHers.Deserializer
+namespace GameDataParserHers.DataAccess
 {
     public interface IVideoGamesDeserializer
     {

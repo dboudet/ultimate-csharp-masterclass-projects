@@ -1,7 +1,5 @@
-﻿using GameDataParserHers.Deserializer;
-using GameDataParserHers.FileReader;
-using GameDataParserHers.Printer;
-using GameDataParserHers.UserInteractions;
+﻿using GameDataParserHers.DataAccess;
+using GameDataParserHers.UserInteraction;
 
 namespace GameDataParserHers.App
 {

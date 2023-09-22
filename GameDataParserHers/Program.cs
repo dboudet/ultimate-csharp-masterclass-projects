@@ -1,8 +1,7 @@
 ﻿using GameDataParserHers.App;
-using GameDataParserHers.Deserializer;
-using GameDataParserHers.FileReader;
-using GameDataParserHers.Printer;
-using GameDataParserHers.UserInteractions;
+using GameDataParserHers.DataAccess;
+using GameDataParserHers.Logging;
+using GameDataParserHers.UserInteraction;
 
 var userInteractor = new ConsoleUserInteractor();
 var app = new GameDataParserApp(

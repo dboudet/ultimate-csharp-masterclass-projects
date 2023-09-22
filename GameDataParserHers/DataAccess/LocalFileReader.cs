@@ -1,4 +1,4 @@
-﻿namespace GameDataParserHers.FileReader
+﻿namespace GameDataParserHers.DataAccess
 {
     public class LocalFileReader : IFileReader
     {

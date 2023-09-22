@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
-using GameDataParserHers.UserInteractions;
-using GameDataParserHers.VideoGames;
+using GameDataParserHers.Models;
+using GameDataParserHers.UserInteraction;
 
-namespace GameDataParserHers.Deserializer
+namespace GameDataParserHers.DataAccess
 {
     public class VideoGamesDeserializer : IVideoGamesDeserializer
     {
