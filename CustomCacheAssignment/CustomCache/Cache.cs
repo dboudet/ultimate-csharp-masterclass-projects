@@ -1,6 +1,4 @@
-﻿using CustomCacheAssignment.DataDownloader;
-
-namespace CustomCacheAssignment.CustomCache
+﻿namespace CustomCacheAssignment.CustomCache
 {
     public class Cache<TCacheKey, TDataType> : ICache<TCacheKey, TDataType>
     {
