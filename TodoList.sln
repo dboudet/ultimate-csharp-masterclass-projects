@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomCacheAssignment", "Cu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetUnderTheHoodAssignment", "NetUnderTheHoodAssignment\NetUnderTheHoodAssignment\NetUnderTheHoodAssignment.csproj", "{0D44E59B-C86A-451C-BB35-10C912536F07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsApiReader", "StarWarsApiReader\StarWarsApiReader.csproj", "{68429270-F26C-41F3-848B-2029A66DB4FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{0D44E59B-C86A-451C-BB35-10C912536F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D44E59B-C86A-451C-BB35-10C912536F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D44E59B-C86A-451C-BB35-10C912536F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68429270-F26C-41F3-848B-2029A66DB4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68429270-F26C-41F3-848B-2029A66DB4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68429270-F26C-41F3-848B-2029A66DB4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68429270-F26C-41F3-848B-2029A66DB4FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
