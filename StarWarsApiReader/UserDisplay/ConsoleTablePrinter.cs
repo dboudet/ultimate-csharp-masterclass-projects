@@ -1,9 +1,8 @@
 ﻿using System.Reflection;
-using System.Reflection.PortableExecutable;
 
-namespace StarWarsApiReader.TablePrinter;
+namespace StarWarsApiReader.UserDisplay;
 
-public class TablePrinter
+public class ConsoleTablePrinter : ITablePrinter
 {
     //private static string Separator(int stringLength) =>
     //stringLength > 17 ? "\t\t|" : "\t\t\t|";

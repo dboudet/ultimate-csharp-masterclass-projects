@@ -1,53 +1,44 @@
 ﻿using System.Text.Json;
-using System.Threading.Channels;
 using StarWarsApiReader.ApiReader;
+using StarWarsApiReader.App;
+using StarWarsApiReader.DataInteraction;
 using StarWarsApiReader.Planets;
-using StarWarsApiReader.TablePrinter;
+using StarWarsApiReader.UserDisplay;
+using StarWarsApiReader.UserInteraction;
 
+
+IUserMessages _userMessages = new ConsoleUserMessages();
+IUserInput _userInput = new ConsoleUserInput();
+ITablePrinter _tablePrinter = new ConsoleTablePrinter();
+IPropertyData _propertyData = new PropertyData();
+IInputValidation _inputValidation = new InputValidation(_propertyData);
+StarWarsApiReaderApp _app = new StarWarsApiReaderApp(
+    _userMessages,
+    _userInput,
+    _inputValidation,
+    _propertyData);
 
 var baseUrl = "https://swapi.dev/api/";
 var requestPath = "planets/";
 
-var starWarsApiData = await ApiReader.Read(baseUrl, requestPath);
-
-
-var planetsData = JsonSerializer.Deserialize<PlanetsDataFromApi>(starWarsApiData);
-//Console.WriteLine(planetsData);
-
-var tablePrinter = new TablePrinter();
-var planetsForTable = planetsData.Results
-    .Select(p => new PlanetAbridged(p.Name, p.Population, p.Diameter, p.SurfaceWater));
-tablePrinter.PrintTable(planetsForTable);
-
-
-var validInputEntered = false;
-
-while (validInputEntered == false)
+try
 {
+    var starWarsApiData = await ApiReader.Read(baseUrl, requestPath);
 
-    Console.WriteLine("The statistics of which property would you like to see?");
-    Console.WriteLine("population");
-    Console.WriteLine("diameter");
-    Console.WriteLine("surface water");
+    var planetsData = JsonSerializer.Deserialize<PlanetsDataFromApi>(starWarsApiData)?
+        .Results ?? throw new FormatException("Problem processing data from Star Wars API.");
 
-    var userInput = Console.ReadLine();
+    _tablePrinter.PrintTable(planetsData);
 
+    _userMessages.DisplayProperties();
 
-
-    string planetsForTable2 = userInput switch
-    {
-        "population" => "display population min and max (set validInputEntered to true)",
-        "diameter" => "display diameter min and max (set validInputEntered to true)",
-        "surface water" => "display surface water min and max (set validInputEntered to true)",
-        _ => "Invalid option. Please try again."
-    };
-    Console.WriteLine(planetsForTable2);
+    _app.Run(planetsData);
+}
+catch (Exception ex)
+{
+    _userMessages.DisplayErrorMessage(ex);
 }
 
-
-Console.WriteLine("Press any key to close.");
-Console.ReadKey();
-
-
+_userMessages.EndProgram();
 
 
