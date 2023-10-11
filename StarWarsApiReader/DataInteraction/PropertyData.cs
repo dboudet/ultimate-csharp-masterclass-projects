@@ -21,16 +21,16 @@ public class PropertyData : IPropertyData
         if (collection is null)
             throw new ArgumentNullException($"Problem retrieving {typeof(T)} data.");
 
-        var propertyName = GetPropertyFromInput<T>(input);
+        var property = GetPropertyFromInput<T>(input);
 
-        if (propertyName is null)
+        if (property is null)
             throw new ArgumentNullException($"Could not find property {input}.");
 
         var propertiesWithIntValues = new Dictionary<string, int>();
 
         foreach (var item in collection)
         {
-            bool isInt = int.TryParse(propertyName.GetValue(item)!.ToString(), out int valueAsInt);
+            bool isInt = int.TryParse(property.GetValue(item)!.ToString(), out int valueAsInt);
             if (isInt)
             {
                 string _name = typeof(T).GetProperty("Name")!.GetValue(item)!.ToString() ?? "undefined";

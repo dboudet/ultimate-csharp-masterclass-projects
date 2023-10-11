@@ -22,9 +22,9 @@ public class ConsoleUserMessages : IUserMessages
             $"Min {userInput} is {minAndMaxByProperty["Min"].Value} (planet: {minAndMaxByProperty["Min"].Key})");
 
     }
-    public void DisplayErrorMessage(Exception ex)
+    public void DisplayErrorMessage(string message)
     {
-        Console.WriteLine("Sorry, an error has occurred:", ex.Message);
+        Console.WriteLine("Sorry, an error has occurred:", message);
     }
     public void EndProgram()
     {
