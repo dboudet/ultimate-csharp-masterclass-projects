@@ -8,7 +8,7 @@ namespace TicketsDataAggregator.App;
 
 public class TicketsAggregator
 {
-    private string _ticketsFolder;
+    private readonly string _ticketsFolder;
 
     public TicketsAggregator(string ticketsFolder)
     {
@@ -21,39 +21,48 @@ public class TicketsAggregator
 
         var files = Directory.GetFiles(_ticketsFolder, "*.pdf");
 
+        List<Ticket> allTickets = ProcessFiles(files);
+
+        SaveTicketsToFile(allTickets);
+
+        CultureInfo.CurrentCulture = defaultCulture;
+    }
+
+    private static List<Ticket> ProcessFiles(string[] files)
+    {
         var allTickets = new List<Ticket>();
 
         foreach (string file in files)
         {
-            using (PdfDocument document = PdfDocument.Open($"{file}"))
+            using PdfDocument document = PdfDocument.Open($"{file}");
+            Page page = document.GetPage(1);
+            string text = page.Text;
+
+            CultureInfo culture;
+            culture = DataParser.GetCultureInfoFromWebsite(page);
+
+            var titles = new List<string>();
+            var datesAsStrings = new List<string>();
+            var timesAsStrings = new List<string>();
+
+            var split = text.Split(
+                new[] { "Title:", "Date:", "Time:", "Visit us:" },
+                StringSplitOptions.None);
+
+
+
+            for (int i = 1; i < (split.Length - 3); i += 3)
             {
-                Page page = document.GetPage(1);
-                string text = page.Text;
-
-                CultureInfo culture;
-                culture = DataParser.GetCultureInfoFromWebsite(page);
-
-                var titles = new List<string>();
-                var datesAsStrings = new List<string>();
-                var timesAsStrings = new List<string>();
-
-                var split = text.Split(
-                    new[] { "Title:", "Date:", "Time:", "Visit us:" },
-                    StringSplitOptions.None);
-
-
-
-                for (int i = 1; i < (split.Length - 3); i += 3)
-                {
-                    allTickets.Add(new Ticket(
-                        culture, split[i], split[i + 1], split[i + 2]));
-                }
+                allTickets.Add(new Ticket(
+                    culture, split[i], split[i + 1], split[i + 2]));
             }
         }
+
+        return allTickets;
+    }
+
+    private static void SaveTicketsToFile(List<Ticket> allTickets) =>
         File.WriteAllLines("aggregatedTickets.txt",
             allTickets.Select(v => v.ToString()));
-
-        CultureInfo.CurrentCulture = defaultCulture;
-    }
 }
 

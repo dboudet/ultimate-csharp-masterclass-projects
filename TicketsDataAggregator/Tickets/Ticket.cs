@@ -30,6 +30,8 @@ internal class Ticket
         var userTime = TimeOnly.Parse(TimeAsString, Culture);
         return userTime.ToString("HH:mm", CultureInfo.InvariantCulture);
     }
+
+
     public override string ToString()
     {
         var sb = new StringBuilder();
