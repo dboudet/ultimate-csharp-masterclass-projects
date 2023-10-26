@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWarsApiReader", "StarWa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "CustomLinkedList\CustomLinkedList.csproj", "{7D0E8C00-A9BD-40EB-92C9-4DFB413B2ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLinkedListHerVersion", "CustomLinkedListHerVersion\CustomLinkedListHerVersion.csproj", "{D4CBB21B-025D-49B0-98B1-088C16BEADB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedListHerVersion", "CustomLinkedListHerVersion\CustomLinkedListHerVersion.csproj", "{D4CBB21B-025D-49B0-98B1-088C16BEADB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketsDataAggregator", "TicketsDataAggregator\TicketsDataAggregator.csproj", "{2367A226-2441-4265-A09B-271C36A9EC96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{D4CBB21B-025D-49B0-98B1-088C16BEADB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4CBB21B-025D-49B0-98B1-088C16BEADB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4CBB21B-025D-49B0-98B1-088C16BEADB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2367A226-2441-4265-A09B-271C36A9EC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2367A226-2441-4265-A09B-271C36A9EC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2367A226-2441-4265-A09B-271C36A9EC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2367A226-2441-4265-A09B-271C36A9EC96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
