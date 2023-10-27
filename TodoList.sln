@@ -33,11 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedListHerVersion"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketsDataAggregator", "TicketsDataAggregator\TicketsDataAggregator.csproj", "{2367A226-2441-4265-A09B-271C36A9EC96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsSectionExamples", "UnitTestsSectionExamples\UnitTestsSectionExamples.csproj", "{4D8312A6-C494-4CD5-9173-4D47999723B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestsSectionExamples", "UnitTestsSectionExamples\UnitTestsSectionExamples.csproj", "{4D8312A6-C494-4CD5-9173-4D47999723B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsSectionExamplesTests", "UnitTestsSectionExamplesTests\UnitTestsSectionExamplesTests.csproj", "{65E4374E-9CC6-4FEA-8E32-D3B3206DF066}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestsSectionExamplesTests", "UnitTestsSectionExamplesTests\UnitTestsSectionExamplesTests.csproj", "{65E4374E-9CC6-4FEA-8E32-D3B3206DF066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciGenerator", "FibonacciGenerator\FibonacciGenerator.csproj", "{2A88B938-7973-40E5-BF89-D604848E9E65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FibonacciGenerator", "FibonacciGenerator\FibonacciGenerator.csproj", "{2A88B938-7973-40E5-BF89-D604848E9E65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciGeneratorTests", "FibonacciGeneratorTests\FibonacciGeneratorTests.csproj", "{9A10A8E6-F316-4045-BD3A-9F7602535AAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{2A88B938-7973-40E5-BF89-D604848E9E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A88B938-7973-40E5-BF89-D604848E9E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A88B938-7973-40E5-BF89-D604848E9E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A10A8E6-F316-4045-BD3A-9F7602535AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A10A8E6-F316-4045-BD3A-9F7602535AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A10A8E6-F316-4045-BD3A-9F7602535AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A10A8E6-F316-4045-BD3A-9F7602535AAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
