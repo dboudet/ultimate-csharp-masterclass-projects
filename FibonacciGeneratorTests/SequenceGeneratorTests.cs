@@ -1,4 +1,5 @@
 ﻿using FibonacciGenerator;
+using Moq;
 using NUnit.Framework;
 
 namespace FibonacciGeneratorTests
@@ -90,5 +91,19 @@ namespace FibonacciGeneratorTests
             Assert.AreEqual(new int[] { 0, 1 }, result);
         }
 
+        //public void NotAnActualTest()
+        //{
+        //    var dbMock = new Mock<InterfaceOfWhatWereMocking>();
+
+        //    dbMock
+        //        .Setup(mock => mock.GetById(5))
+        //        .Returns(new ObjectTypeWereMocking(5, "John", "Smith"));
+
+        //    var classThatNeedsMockedDependency = new ClassWithDependency(
+        //        dbMock.Object);
+
+        //    var result = classThatNeedsMockedDependency.GetById(5);
+        //    Assert.AreEqual(expected, result);
+        //}
     }
 }
