@@ -1,4 +1,5 @@
-﻿using Game;
+﻿using DiceGameHersToBeTested;
+using Game;
 using Moq;
 using NUnit.Framework;
 using UserCommunication;
@@ -102,7 +103,8 @@ namespace DiceGameHersTests
             var gameResult = _cut.Play();
 
             _userCommunicationMock.Verify(
-                m => m.ReadInteger("Enter a number:"),
+                m => m.ReadInteger(
+                    Resource.EnterNumberMessage),
                 Times.Exactly(numberRolled));
         }
 

@@ -1,4 +1,5 @@
-﻿using UserCommunication;
+﻿using DiceGameHersToBeTested;
+using UserCommunication;
 
 namespace Game;
 
@@ -25,7 +26,8 @@ public class GuessingGame
         var triesLeft = InitialTries;
         while (triesLeft > 0)
         {
-            var guess = _userCommunication.ReadInteger("Enter a number:");
+            var guess = _userCommunication.ReadInteger(
+                Resource.EnterNumberMessage);
             if (guess == diceRollResult)
             {
                 return GameResult.Victory;
