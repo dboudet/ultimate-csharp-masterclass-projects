@@ -1,9 +1,11 @@
-﻿namespace DiceRollGameV2.Game
+﻿using DiceRollGameV2.UserMessages;
+
+namespace DiceRollGameV2.DiceStore
 {
-    public class Dice
+    public class Dice : IDice
     {
         readonly int _numberOfSides;
-        public Dice(int numberOfSides)
+        public Dice(int numberOfSides, IUserInteraction userInteraction)
         {
             if (numberOfSides > 0)
             {
@@ -11,7 +13,7 @@
             }
             else
             {
-                Console.WriteLine("Invalid number of sides provided. Using default of 6");
+                userInteraction.DisplayInvalidDice();
                 _numberOfSides = 6;
             }
         }

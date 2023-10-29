@@ -1,15 +1,19 @@
-﻿using DiceRollGameV2.Game;
+﻿using DiceRollGameV2.DiceStore;
+using DiceRollGameV2.Game;
+using DiceRollGameV2.GameMechanicsStore;
 using DiceRollGameV2.UserMessages;
 
-var game = new GameMechanics
-{
-    MaxGuesses = 3,
-    DiceSides = 6
-};
-
-DisplayMessage.Intro();
-
-GuessingGame.Play(game);
+const int diceSides = 6;
+const int maxGuesses = 3;
 
 
-Console.ReadKey();
+IUserInteraction _userInteraction = new ConsoleUserInteraction();
+IGameMechanics _gameMechanics = new GameMechanics(diceSides, maxGuesses);
+IDice _dice = new Dice(diceSides, _userInteraction);
+
+var _app = new GuessingGame(_dice, _gameMechanics, _userInteraction);
+
+_app.Play();
+
+
+_userInteraction.EndGame();

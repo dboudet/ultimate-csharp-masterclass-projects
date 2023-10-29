@@ -1,37 +1,54 @@
-﻿using DiceRollGameV2.UserMessages;
+﻿using DiceRollGameV2.DiceStore;
+using DiceRollGameV2.GameMechanicsStore;
+using DiceRollGameV2.UserMessages;
 
 namespace DiceRollGameV2.Game
 {
     public class GuessingGame
     {
-        public static void Play(GameMechanics game)
+        IDice Dice { get; }
+        IGameMechanics GameMechanics { get; }
+        IUserInteraction UserInteraction { get; }
+
+
+        public GuessingGame(IDice dice, IGameMechanics gameMechanics, IUserInteraction userInteraction)
         {
-            var diceRoll = new Dice(game.DiceSides).Roll();
+            Dice = dice;
+            GameMechanics = gameMechanics;
+            UserInteraction = userInteraction;
+        }
 
-            while (game.IsNotOver())
+        public void Play()
+        {
+            UserInteraction.DisplayIntro();
+            var diceRoll = Dice.Roll();
+
+            while (GameMechanics.IsNotOver())
             {
-                var userInput = new UserInput(Console.ReadLine());
+                var userInput = UserInteraction.GetUserInput();
 
-                if (!userInput.IsInteger)
+                bool isInputInteger = int.TryParse(userInput, out int inputAsInteger);
+
+                if (!isInputInteger)
                 {
-                    DisplayMessage.Invalid();
+                    UserInteraction.DisplayInvalidInput();
                 }
-                else if (userInput.InputAsInt == diceRoll)
+                else if (inputAsInteger == diceRoll)
                 {
-                    DisplayMessage.Winner();
-                    game.IsCorrectGuess = true;
+                    UserInteraction.DisplayWinner();
+                    GameMechanics.IsCorrectGuess = true;
                     break;
                 }
                 else
                 {
-                    DisplayMessage.WrongValidGuess();
-                    game.RemainingGuesses--;
+                    UserInteraction.DisplayWrongValidGuess();
+                    GameMechanics.RemainingGuesses--;
                 }
 
-                if (game.RemainingGuesses > 0) DisplayMessage.EnterNumber();
+                if (GameMechanics.RemainingGuesses > 0) UserInteraction.DisplayEnterNumber();
             }
 
-            if (!game.IsCorrectGuess) DisplayMessage.Loser();
+            if (!GameMechanics.IsCorrectGuess) UserInteraction.DisplayLoser();
 
         }
     }
