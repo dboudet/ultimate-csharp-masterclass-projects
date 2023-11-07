@@ -1,13 +1,10 @@
 ﻿using Moq;
 using NUnit.Framework;
-using NUnit.Framework.Internal.Commands;
-using PasswordGenerator;
 
-namespace PasswordGeneratorTests;
-
+[TestFixture]
 public class PasswordGeneratorTests
 {
-    PasswordGeneratorApp _cut;
+    PasswordGenerator _cut;
     Mock<IRandom> _rand;
     const string _specialCharacters = "!@#$%^&*()_-+=";
 
@@ -15,7 +12,7 @@ public class PasswordGeneratorTests
     public void Setup()
     {
         _rand = new Mock<IRandom>();
-        _cut = new PasswordGeneratorApp(_rand.Object);
+        _cut = new PasswordGenerator(_rand.Object);
     }
 
     [Test]

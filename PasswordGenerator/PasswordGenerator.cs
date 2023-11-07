@@ -1,14 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("PasswordGeneratorTests")]
-
-namespace PasswordGenerator;
-
-public class PasswordGeneratorApp
+﻿public class PasswordGenerator
 {
     private readonly IRandom _random;
 
-    public PasswordGeneratorApp(IRandom randomWrapper)
+    public PasswordGenerator(IRandom randomWrapper)
     {
         _random = randomWrapper;
     }

@@ -1,7 +1,4 @@
-﻿
-namespace PasswordGenerator;
-
-public interface IRandom
+﻿public interface IRandom
 {
     int Next(int lowerBound, int upperBound);
     int Next(int maxLength);
