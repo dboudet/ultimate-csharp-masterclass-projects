@@ -6,7 +6,7 @@ namespace PasswordGenerator;
 
 public class PasswordGeneratorApp
 {
-    private readonly IRandom _random = new RandomWrapper();
+    private readonly IRandom _random;
 
     public PasswordGeneratorApp(IRandom randomWrapper)
     {
@@ -14,27 +14,26 @@ public class PasswordGeneratorApp
     }
 
     public string Generate(
-        int left, int right, bool includeSpecial)
+        int minLength, int maxLength, bool includeSpecial)
     {
-        ValidateRange(left, right);
-
+        ValidateRange(minLength, maxLength);
         var availableCharacters = GetAvailableCharacters(includeSpecial);
-        var length = _random.Next(left, right + 1);
-        var result = CreatePassword(availableCharacters, length);
-        return result;
+        int length = GeneratePasswordLength(minLength, maxLength);
+
+        return CreatePassword(availableCharacters, length);
     }
 
-    private void ValidateRange(int left, int right)
+    private void ValidateRange(int minLength, int maxLength)
     {
-        if (left < 1)
+        if (minLength < 1)
         {
             throw new ArgumentOutOfRangeException(
-                $"{nameof(left)} must be greater than 0");
+                $"{nameof(minLength)} must be greater than 0");
         }
-        if (right < left)
+        if (maxLength < minLength)
         {
             throw new ArgumentOutOfRangeException(
-                $"{nameof(left)} must be smaller than {nameof(right)}");
+                $"{nameof(minLength)} must be smaller than {nameof(maxLength)}");
         }
     }
 
@@ -45,10 +44,18 @@ public class PasswordGeneratorApp
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     }
 
-    private string CreatePassword(string characters, int length)
+    private int GeneratePasswordLength(int minLength, int maxLength)
     {
-        return new string(Enumerable.Repeat(characters, length)
-            .Select(chars => chars[_random.Next(chars.Length)])
-            .ToArray());
+        return _random.Next(minLength, maxLength + 1);
+    }
+
+    private string CreatePassword(string availableCharacters, int length)
+    {
+        char[] passwordCharacters =
+            Enumerable.Repeat(availableCharacters, length)
+            .Select(characters => characters[_random.Next(characters.Length)])
+            .ToArray();
+
+        return new string(passwordCharacters);
     }
 }

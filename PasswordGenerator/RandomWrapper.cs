@@ -3,19 +3,20 @@ namespace PasswordGenerator;
 
 public interface IRandom
 {
-    int Next(int left, int right);
-    int Next(int maxValue);
+    int Next(int lowerBound, int upperBound);
+    int Next(int maxLength);
 }
 
 public class RandomWrapper : IRandom
 {
-    public int Next(int left, int right)
+    private readonly Random _random = new();
+    public int Next(int lowerBound, int upperBound)
     {
-        return new Random().Next(left, right + 1);
+        return _random.Next(lowerBound, upperBound);
     }
 
-    public int Next(int maxValue)
+    public int Next(int maxLength)
     {
-        return new Random().Next(maxValue);
+        return _random.Next(maxLength);
     }
 }
