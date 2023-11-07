@@ -5,72 +5,106 @@ using NUnit.Framework;
 public class PasswordGeneratorTests
 {
     PasswordGenerator _cut;
-    Mock<IRandom> _rand;
+    Mock<IRandom> _mockRandom;
     const string _specialCharacters = "!@#$%^&*()_-+=";
 
     [SetUp]
     public void Setup()
     {
-        _rand = new Mock<IRandom>();
-        _cut = new PasswordGenerator(_rand.Object);
+        _mockRandom = new Mock<IRandom>();
+        _cut = new PasswordGenerator(_mockRandom.Object);
+    }
+
+    [TestCase(1, 10)]
+    [TestCase(6, 12)]
+    [TestCase(12, 12)]
+    public void GivenValidRange_Generate_ShallNotThrowException(
+        int minLength, int maxLength)
+    {
+        Assert.DoesNotThrow(
+            () => _cut.Generate(minLength, maxLength, It.IsAny<bool>()));
     }
 
     [Test]
-    public void GivenValidRange_Generate_ShallReturnStringOfProperLength()
+    public void GivenValidRange_Generate_ShallReturnStringOfExpectedLength()
     {
-        var leftRange = 8;
-        var rightRange = 12;
-        var includeSpecial = true;
-        _rand.Setup(m => m.Next(leftRange, rightRange))
-            .Returns(10)
-            .Verifiable();
-        _rand.Setup(m => m.Next(50))
-            .Returns(new Random().Next(50))
-            .Verifiable();
+        var minLength = 8;
+        var maxLength = 12;
+        var expectedLength = 10;
+        SetupRandomToReturnExpectedLength(
+            minLength, maxLength, expectedLength);
 
-        var result = _cut.Generate(leftRange, rightRange, includeSpecial);
+        var result = _cut.Generate(minLength, maxLength, It.IsAny<bool>());
 
         Assert.That(result, Is.TypeOf(typeof(string)));
-        Assert.AreEqual(10, result.Length);
+        Assert.AreEqual(expectedLength, result.Length);
+    }
+
+    [TestCase(0)]
+    [TestCase(-1)]
+    [TestCase(-50)]
+    public void GivenMinLengthIsLessThanOne_ShallThrowException(int minLength)
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(
+            () => _cut.Generate(minLength, 10, It.IsAny<bool>()));
+    }
+
+    [TestCase(11)]
+    [TestCase(50)]
+    public void GivenMinLengthIsGreaterThanMaxLength_ShallThrowException(int minLength)
+    {
+        const int maxLength = 10;
+        Assert.Throws<ArgumentOutOfRangeException>(
+            () => _cut.Generate(minLength, maxLength, It.IsAny<bool>()));
     }
 
     [Test]
-    public void GivenLeftRangeIsLessThanOne_ShallThrowException()
+    public void GivenIncludeSpecialTrue_Generate_ShouldIncludeSpecialCharacters()
     {
-        Assert.Throws<ArgumentOutOfRangeException>(() => _cut.Generate(0, 10, false));
-    }
-
-    [Test]
-    public void GivenLeftRangeIsGreaterThanRightRange_ShallThrowException()
-    {
-        Assert.Throws<ArgumentOutOfRangeException>(() => _cut.Generate(10, 5, false));
-    }
-
-    [Ignore("not testable")]
-    public void GivenSpecialCharTrue_Generate_ShouldIncludeSpecialCharacters()
-    {
-        var leftRange = 8;
-        var rightRange = 12;
+        var minLength = 4;
+        var maxLength = 12;
+        var expectedLength = 5;
         var includeSpecial = true;
-        _rand.Setup(m => m.Next(leftRange, rightRange))
-            .Returns(10)
-            .Verifiable();
-        _rand.Setup(m => m.Next(It.IsAny<int>()))
-            .Returns(new Random().Next(50))
-            .Verifiable();
+        SetupRandomToReturnExpectedLength(
+            minLength, maxLength, expectedLength);
+        SetupRandomToReturnCharactersAtGivenIndices(0, 1, 42, 3, 46);
 
-        var result = _cut.Generate(leftRange, 12, includeSpecial);
+        var result = _cut.Generate(minLength, maxLength, includeSpecial);
 
-        var intersection = result.Intersect(_specialCharacters);
-        Assert.IsNotEmpty(intersection);
+        Assert.AreEqual("AB&D_", result);
     }
 
-    [Ignore("not testable")]
-    public void GivenSpecialCharFalse_Generate_ShouldNotIncludeSpecialCharacters()
+    [Test]
+    public void GivenIncludeSpecialFalse_Generate_ShouldNotIncludeSpecialCharacters()
     {
-        var result = _cut.Generate(5, 10, false);
-        var intersection = result.Intersect(_specialCharacters);
-        Assert.IsEmpty(intersection);
+        var minLength = 5;
+        var maxLength = 5;
+        var expectedLength = 5;
+        var includeSpecial = false;
+        SetupRandomToReturnExpectedLength(
+            minLength, maxLength, expectedLength);
+        SetupRandomToReturnCharactersAtGivenIndices(0, 1, 2, 3, 4);
+
+        var result = _cut.Generate(minLength, maxLength, includeSpecial);
+
+        Assert.AreEqual("ABCDE", result);
     }
 
+    private void SetupRandomToReturnExpectedLength(
+        int minLength, int maxLength, int expectedLength)
+    {
+        _mockRandom.Setup(mock => mock.Next(minLength, maxLength + 1))
+            .Returns(expectedLength);
+    }
+
+    private void SetupRandomToReturnCharactersAtGivenIndices(params int[] indices)
+    {
+        var sequence = _mockRandom.SetupSequence(
+            mock => mock.Next(It.IsAny<int>()));
+
+        foreach (var index in indices)
+        {
+            sequence = sequence.Returns(index);
+        }
+    }
 }

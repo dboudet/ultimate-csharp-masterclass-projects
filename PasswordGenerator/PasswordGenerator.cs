@@ -10,8 +10,11 @@
     public string Generate(
         int minLength, int maxLength, bool includeSpecial)
     {
+        var availableCharacters = includeSpecial ?
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=" :
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
         ValidateRange(minLength, maxLength);
-        var availableCharacters = GetAvailableCharacters(includeSpecial);
         int length = GeneratePasswordLength(minLength, maxLength);
 
         return CreatePassword(availableCharacters, length);
@@ -29,13 +32,6 @@
             throw new ArgumentOutOfRangeException(
                 $"{nameof(minLength)} must be smaller than {nameof(maxLength)}");
         }
-    }
-
-    private string GetAvailableCharacters(bool includeSpecial)
-    {
-        return includeSpecial ?
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=" :
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     }
 
     private int GeneratePasswordLength(int minLength, int maxLength)
